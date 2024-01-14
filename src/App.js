@@ -3,8 +3,7 @@ import { correct, wrong, congrats } from './assets/images/index'
 import {capitalAndFlagQuestions} from './service/api'
 import { render } from '@testing-library/react';
 function App() {
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  const countriesData = ['Sweden', 'Vietnam', 'Malaysia', 'Austria'];
+
   const [showScore, setShowScore] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
@@ -53,7 +52,8 @@ function App() {
           <p className='title'>Country Quiz</p>
           <div className='section-count' >
             {capitalAndFlagQuestions.map((num,index) => (
-              <button key={index} className={`count-circle ${index === currentQuestion ? 'active' : ''}`}>{index}</button>
+              <button key={index} className={`count-circle ${index === currentQuestion ? 'active' : ''}`}>{index +1}</button>
+              
             ))}
           </div>
         </div>
